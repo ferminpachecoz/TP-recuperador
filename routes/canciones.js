@@ -3,16 +3,15 @@ const express = require('express');
 const router = express.Router();
 
 // ************ Controllers *********
-const mainController = require('../controllers/mainController');
+const cancionesController = require('../controllers/cancionesController');
 
 
 // ************ Dirs *********
-router.get('/', mainController.index);
-
-// router.post('/', )
-// router.get('/:id', )
-// router.put('/:id', )
-// router.delete('/:id', )
+router.get('/', cancionesController.list)
+router.get('/:id', cancionesController.show)
+router.post('/', cancionesController.store)
+router.delete('/:id', cancionesController.delete)
+router.put("/:id", cancionesController.update);
 
 
 module.exports = router;

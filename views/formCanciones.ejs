@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Start Formulario para crear Album -->
+    <form action="/canciones/" method="post">
+        <h3>1- Crear Album de la Cancion</h3>
+        <div>
+            <label for="input1">Titulo del Album: </label>
+            <input type="text" id="input1" name="tituloAlbum">
+        </div>
+        <div>
+            <label for="input1">Duracion del Album: </label>
+            <input type="text" id="input1" name="duracionAlbum">
+        </div>
+        <button type="submit">Crear Album</button>
+    </form>
+    <!-- End Formulario para crear Album -->
+
+    <!-- Start Formulario para crear Artista -->
+    <form action="/canciones/" method="post">
+        <h3>2- Crear Artista</h3>
+        <div>
+            <label for="input1">Nombre: </label>
+            <input type="text" id="input1" name="nombreArtista">
+        </div>
+        <div>
+            <label for="input1">Apellido: </label>
+            <input type="text" id="input1" name="apellidoArtista">
+        </div>
+        <button type="submit">Asociar Artista</button>
+    </form>
+    <!-- End Formulario para crear Artista -->
+
+    <!-- Start Formulario para asociar y crear Canciones -->
+    <form action="/canciones/" method="post">
+        <h3>Crear Cancion</h3>
+        <div>
+            <label for="input1">Titulo: </label>
+            <input type="text" id="input1" name="tituloCancion">
+        </div>
+        <div>
+            <label for="input2">Duracion: </label>
+            <input type="text" id="input2" name="duracionCancion">
+        </div>
+        <div>
+            <label for="input1">Genero: </label>
+            <select name="genero_id" id="">
+                <% for( let i = 0; i < canciones.length; i++ ) { %>
+                    <option value="<%= canciones[i].generos.id %> "><%= canciones[i].generos.name %> </option>
+                <% } %>
+            </select>
+        </div>
+        <div>
+            <label for="input1">Album: </label>
+            <select name="album_id" id="">
+                <% for( let i = 0; i < canciones.length; i++ ) { %>
+                    <option value="<%= canciones[i].albumes.id %> "><%= canciones[i].albumes.nombre %> </option>
+                <% } %>
+            </select>
+        </div>
+        <div>
+            <label for="input1">Artista: </label>
+            <select name="artista_id" id="">
+                <% for( let i = 0; i < canciones.length; i++ ) { %>
+                    <option value="<%= canciones[i].artistas.id %> "><%= canciones[i].artistas.nombre %> <%= canciones[i].artistas.apellido %> </option>
+                <% } %>
+            </select>
+        </div>
+        <button type="submit">Crear Registro</button>
+    </form>
+    <!-- End Formulario para asociar y crear Canciones -->
+
+</body>
+</html>

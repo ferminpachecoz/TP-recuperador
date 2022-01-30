@@ -5,6 +5,7 @@ const session = require('express-session')
 
 // ************ Routes declare ************
 const canciones = require('./routes/canciones.js');
+const generos = require('./routes/generos.js');
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -32,3 +33,4 @@ app.use(session({
 
 // ************ Routes manager ************
 app.use('/canciones', canciones);
+app.use('/generos', generos)

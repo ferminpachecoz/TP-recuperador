@@ -11,10 +11,18 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: "generos"
+        tableName: "generos",
+        timestamps: false
     }
     
     const Genero = sequelize.define(alias, cols, config);
+
+    Genero.associate = function(models){
+        Genero.hasMany(models.Canciones, {
+            as: "canciones",
+            foreignKey: "genero_id"
+        })
+    }
 
     return Genero;
 }

@@ -8,5 +8,11 @@
 </head>
 <body>
     <h1>Aca estan todas la canciones</h1>
+    <a href="/canciones/crear">Crear Cancion</a>
+    <ol>
+        <% for( let i = 0; i < canciones.length; i++ ) { %>
+            <li><%= canciones[i].titulo %> </li>
+        <% } %>
+    </ol>
 </body>
 </html>

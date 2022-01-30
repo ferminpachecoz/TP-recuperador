@@ -14,10 +14,18 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: "artistas"
+        tableName: "artistas",
+        timestamps: false
     }
     
     const Artista = sequelize.define(alias, cols, config);
+
+    Artista.associate = function(models){
+        Artista.hasMany(models.Canciones, {
+            as: "canciones",
+            foreignKey: "artista_id"
+        })
+    }
 
     return Artista;
 }
