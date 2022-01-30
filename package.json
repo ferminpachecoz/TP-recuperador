@@ -1,0 +1,29 @@
+{
+  "name": "tp-recuperador",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferminpachecoz/TP-recuperador.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ferminpachecoz/TP-recuperador/issues"
+  },
+  "homepage": "https://github.com/ferminpachecoz/TP-recuperador#readme"
+}
